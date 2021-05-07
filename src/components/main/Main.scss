@@ -1,0 +1,22 @@
+.main {
+  background-color: $medium;
+  height: 92.5vh;
+  font-family: $text;
+  &--yourProjects {
+    height: 30%;
+    &__title {
+      padding: 20px 40px;
+    }
+    &__text {
+      padding: 20px 40px;
+    }
+  }
+  &--createBtn {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(184, 179, 179);
+    &:hover {
+      background-color: rgb(250, 248, 248);
+    }
+  }
+}
