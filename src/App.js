@@ -1,15 +1,21 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 /* estilos */
 import './App.scss';
 /* componentes */
 import Header from './components/header/Header';
-import Main from './components/main/Main';
+import Home from './components/main/Home';
 
 function App() {
   return (
-    <div className='App'>
-      <Header />
-      <Main />
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Header />
+        <Switch>
+          <Route path='/' component={Home} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
