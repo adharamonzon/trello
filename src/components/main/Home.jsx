@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-class Projects{
-  constructor(name){
-    this.name = name
+
+
+const Main = (props) => {
+ const [data, setData] = useState({
+   title: '',
+   description: '',
+ })
+  const handleTitleChange = (ev) => {
+    setData({
+      ...data,
+      [ev.target.name]:  (ev.currentTarget.value)
+    })
   }
-}
+  const handleDescriptionChange = (ev) => {
+    setData({
+      ...data,
+      [ev.target.name]:  (ev.currentTarget.value)
+    })
+  }
+  const addNewProject = (props) => {
+    console.log('han creado una nueva tarjeta', data);
 
-const Main = () => {
-  const addNewProject = () => {
-    console.log('han creado una nueva tarjeta');
-   /*  const name = prompt('añadir título a tu proyecto')
-    const project = new Projects(name);
-    console.log(project); */
   }
   return (<main className='main'>
     <section className='main--yourProjects'>
@@ -23,13 +33,13 @@ const Main = () => {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <input className="modal-header__title" type="text" placeholder=" Introduce el nombre de tu proyecto" /> 
+              <input className="modal-header__title" name='title' onChange={handleTitleChange} type="text" placeholder=" Introduce el nombre de tu proyecto" /> 
               <button type="button" className="close modal-header__close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">
-              <textarea className="modal-body__description" type="text" placeholder=" Introduce una breve descripción de tu proyecto" /> 
+              <textarea className="modal-body__description" name='description'  onChange={handleDescriptionChange} type="text" placeholder=" Introduce una breve descripción de tu proyecto" /> 
             </div>
             <div className="modal-footer">
               <button type="button" className="btn modal-footer__button" onClick={addNewProject}>Crear tarjeta</button>
