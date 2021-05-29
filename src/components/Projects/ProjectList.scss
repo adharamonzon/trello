@@ -1,3 +1,18 @@
 .projectList {
   margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+  &--link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      background-color: black;
+    }
+  }
 }

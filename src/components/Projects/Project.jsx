@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Project = (props) => {
-  console.log(props);
-  return <div>
-    <h1>{props.title}</h1>
-    <p>{props.description}</p>
+  return <div className="project">
+    <h1 className="project__title">{props.project.title}</h1>
+    <p className="project__description">{props.project.description}</p>
   </div>
 }
 

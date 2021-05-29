@@ -1,0 +1,14 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $darkBackground;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  &__title {
+    text-transform: capitalize;
+    font-size: 26px;
+  }
+}

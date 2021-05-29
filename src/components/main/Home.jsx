@@ -7,9 +7,8 @@ const Home = () => {
   const [data, setData] = useState({
     title: '',
     description: '',
-    id: '',
   })
-  debugger;
+  
 
   const handleNewProject = (ev) => {
     setData({
