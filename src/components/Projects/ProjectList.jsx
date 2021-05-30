@@ -1,18 +1,12 @@
 import Project from './Project.jsx';
 import { Link } from 'react-router-dom';
 const ProjectList = (props) => {
-  const createKey = () => {
-    let id = 0;
-    ++id
-    return (id); 
-  }
-  
   if (props.projectList.length > 0 ) {
     const project = props.projectList.map((item)=> {
-      console.log('item', item.title);
       return (
-        <Link className="projectList--link">
-        <li className="projectList--item" key={createKey()}>
+        <Link to="/project/:id" className="projectList--link">
+        <li className="projectList--item" key={item.id}>
+    
           <Project project={item}/>
         </li>
         </Link>

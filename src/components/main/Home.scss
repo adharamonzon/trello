@@ -38,6 +38,13 @@
     width: 95%;
     height: 50px;
   }
+  &__id {
+    width: 60%;
+    height: 30px;
+    border-radius: 3px;
+    border: solid 1px rgb(189, 188, 188);
+    margin-bottom: 8px;
+  }
 }
 .modal-footer {
   &__button {
