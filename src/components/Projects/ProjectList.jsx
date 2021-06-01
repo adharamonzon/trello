@@ -1,4 +1,3 @@
-import Project from './Project.jsx';
 import { Link } from 'react-router-dom';
 const ProjectList = (props) => {
   if (props.projectList.length > 0 ) {
@@ -6,8 +5,8 @@ const ProjectList = (props) => {
       return (
         <Link to={`/project/${item.id}`} className="projectList--link">
         <li className="projectList--item" key={item.id}>
-    
-          <Project project={item}/>
+           <h1 className="projectList--item__title">{item.title}</h1>
+           <p className="projectList--item__description">{item.description}</p>
         </li>
         </Link>
       )

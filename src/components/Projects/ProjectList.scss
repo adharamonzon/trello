@@ -15,4 +15,24 @@
       background-color: black;
     }
   }
+  &--item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $darkBackground;
+    color: white;
+    padding: 5px;
+    min-height: 150px;
+    border-radius: 3px;
+    list-style-type: none;
+    &:hover {
+      color: $darkest;
+      background-color: $lightest;
+    }
+    &__title {
+      text-transform: capitalize;
+      font-size: 26px;
+    }
+  }
 }
