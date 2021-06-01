@@ -4,7 +4,7 @@ const ProjectList = (props) => {
   if (props.projectList.length > 0 ) {
     const project = props.projectList.map((item)=> {
       return (
-        <Link to="/project/:id" className="projectList--link">
+        <Link to={`/project/${item.id}`} className="projectList--link">
         <li className="projectList--item" key={item.id}>
     
           <Project project={item}/>
