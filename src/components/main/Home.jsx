@@ -1,53 +1,36 @@
-import  { useState } from 'react';
+
 import ProjectList from '../Projects/ProjectList.jsx';
 
-const projects = []
+
 
 const Home = () => {
-  const [data, setData] = useState({
-    title: '',
-    description: '',
-    id:'',
-  })
-  
 
   const handleNewProject = (ev) => {
-    setData({
-      ...data,
-      [ev.target.name]: (ev.currentTarget.value)
-    })
+   console.log(ev.target.value);
   }
-  const addNewProject = () => {
-    projects.push(data);
+  const addNewProject = (ev) => {
+   /*  console.log(ev, 'me han clickado'); */
   }
   return(
     <main className='main'>
-    <section className='main--yourProjects'>
-      <h3 className='main--yourProjects__title'>Tus proyectos</h3>
-      <div>
-        <ProjectList projectList={projects}/>
-        <button className='main--createBtn btn btn-light' data-target="#exampleModal" data-toggle='modal'>Crear un tablero nuevo</button>
-    </div>
-    {/* VENTANA MODAL */}
-   <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
-         <div className="modal-header">
-            <input className="modal-header__title" name='title' onChange={handleNewProject} type="text" placeholder=" Nombre del proyecto" />
-            <button type="button" className="close modal-header__close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+    <form action="post"  className="form">
+         <div className="form--header">
+           <h3>Crea un tablero nuevo</h3>
+            <input className="form--header__title" required name='title' onChange={handleNewProject} type="text" placeholder=" Nombre del proyecto *" />
          </div>
-         <div className="modal-body">
-           <input className="modal-body__id" name='id' type='text' placeholder=" Añade un id único para tu proyecto" onChange={handleNewProject} />
-          <textarea className="modal-body__description" name='description' onChange={handleNewProject} type="text" placeholder=" Introduce una breve descripción de tu proyecto" />
+         <div className="form--body">
+          <input className="form--body__id" required name='id' type='text' placeholder=" Añade un id único para tu proyecto *" onChange={handleNewProject} />
+          <textarea className="form--body__description" name='description' onChange={handleNewProject} type="text" placeholder=" Introduce una breve descripción de tu proyecto" />
          </div>
-         <div className="modal-footer">
-          <button type="button" className="btn modal-footer__button"  onClick={addNewProject} data-dismiss="modal" >Crear tarjeta</button>
+         <div className="form--footer">
+          <button type="button" className="form--footer__button"  onClick={addNewProject} >Crear tablero</button>
+        </div> 
+    </form>
+    <section className='yourProjects'>
+    <h3 className='yourProjects--title'>Tus proyectos</h3>
+      <div>{/* 
+        <ProjectList /> */}
         </div>
-       </div>
-      </div>
-   </div>
   </section>
 </main>
     )} 

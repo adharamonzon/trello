@@ -2,57 +2,63 @@
   background-color: $medium;
   height: 92.5vh;
   font-family: $text;
-  &--yourProjects {
-    height: 30%;
-    &__title {
-      padding: 20px 40px;
-    }
-    &__text {
-      padding: 20px 40px;
-    }
-  }
-  &--createBtn {
-    height: 50px;
-    background-color: rgb(250, 248, 248) rgb(184, 179, 179);
-    margin: 40px;
-    &:hover {
-      background-color: rgba(204, 203, 203, 0.7);
-      color: $darkest;
-    }
+  padding: 10px;
+}
+.yourProjects {
+  height: 30%;
+  &--title {
+    padding: 20px 40px;
   }
 }
-.modal-content {
+
+.form {
   background-image: url('https://www.nawpic.com/media/2020/white-nawpic-17.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-}
-.modal-header {
-  &__title {
-    width: 90%;
-    height: 30px;
-    border-radius: 3px;
-    border: solid 1px rgb(189, 188, 188);
+  width: 40%;
+  margin: 20px 50px;
+  border-radius: 3px;
+  &--header {
+    margin: 10px;
+    padding: 10px;
+    margin-left: 40px;
+    &__title {
+      height: 30px;
+      border-radius: 3px;
+      border: solid 1px rgb(189, 188, 188);
+      width: 80%;
+    }
   }
-}
-.modal-body {
-  &__description {
-    width: 95%;
-    height: 50px;
+  &--body {
+    padding: 10px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    &__description {
+      width: 80%;
+      height: 60px;
+    }
+    &__id {
+      height: 30px;
+      border-radius: 3px;
+      border: solid 1px rgb(189, 188, 188);
+      margin-bottom: 15px;
+      width: 80%;
+    }
   }
-  &__id {
-    width: 60%;
-    height: 30px;
-    border-radius: 3px;
-    border: solid 1px rgb(189, 188, 188);
-    margin-bottom: 8px;
-  }
-}
-.modal-footer {
-  &__button {
-    background-color: $lightBackground;
-    color: white;
-    &:hover {
-      background-color: $darkBackground;
+  &--footer {
+    margin-left: 40px;
+    padding: 15px;
+    &__button {
+      color: white;
+      background: $darkBackground;
+      padding: 5px;
+      border: none;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: $lightBackground;
+      }
     }
   }
 }

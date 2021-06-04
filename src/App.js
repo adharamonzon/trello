@@ -1,5 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import { useState } from 'react';
 /* estilos */
 import './App.scss';
 /* componentes */
@@ -7,9 +7,21 @@ import Header from './components/header/Header';
 import Home from './components/main/Home';
 import Project from './components/Projects/Project';
 
+const projects = [];
+
 function App() {
-  const renderProjectDetail = (props) => {
-    console.log(props);
+  const [data, setData] = useState({
+    title: '',
+    description: '',
+    id: '',
+  });
+
+  const handleNewProject = (ev) => {
+    setData({
+      ...data,
+      [ev.target.name]: ev.currentTarget.value,
+    });
+    console.log(data);
   };
 
   return (
@@ -18,10 +30,10 @@ function App() {
         <Header />
         <Switch>
           <Route path='/' exact>
-            <Home />
+            <Home handleNewProject={handleNewProject} />
           </Route>
           <Route path='/proyect/:id'>
-            <Project render={renderProjectDetail()} />
+            <Project />
           </Route>
         </Switch>
       </div>
